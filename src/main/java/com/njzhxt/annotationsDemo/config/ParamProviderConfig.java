@@ -117,6 +117,7 @@ public class ParamProviderConfig
 //            return;
 //        }
         //处理注解在属性上
+
         Field[] declaredFields = clazz.getDeclaredFields();
         for (Field declaredField : declaredFields) {
             ParamProvider annotation = declaredField.getAnnotation(ParamProvider.class);
@@ -126,6 +127,8 @@ public class ParamProviderConfig
             declaredField.setAccessible(true);
             try {
                 String paramValueByKey = paramProviderService.getParamValueByKey(annotation.value());
+                // 属性为静态变量 可以设置为 null
+                // 尝试设置 不加static   给
                 declaredField.set(null, paramValueByKey);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();

@@ -18,6 +18,7 @@ import java.lang.reflect.Method;
 public class TestRun implements ApplicationRunner {
 
 
+    // 暂时需要设置为 static
     @ParamProvider(value = "123")
     private static String param;
 

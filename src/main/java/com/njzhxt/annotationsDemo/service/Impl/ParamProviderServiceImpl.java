@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 public class ParamProviderServiceImpl implements ParamProviderService {
     @Override
     public String getParamValueByKey(String paramKey) {
-        System.out.println("======="+paramKey+"=======");
-        return paramKey;
+        return "getParamValueByKey :" +paramKey;
     }
 }
